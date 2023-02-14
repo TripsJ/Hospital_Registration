@@ -2,7 +2,7 @@ public class PatientRecord extends Record{
     public PatientRecord() {
     }
 
-    String VisitedDoctor;
+    private String VisitedDoctor;
 
     public String getVisitedDoctor() {
         return VisitedDoctor;
@@ -14,8 +14,11 @@ public class PatientRecord extends Record{
 
     @Override
     public String toString() {
-        return "PatientRecord{" +
-                "VisitedDoctor='" + VisitedDoctor + '\'' +
-                '}';
+        return "Patient Record: [" +'\n'+
+                "Visited Doctor: " + getVisitedDoctor() + '\n' +
+                "name: " + getName() + '\n' +
+                ", firstname: " + "'" + getFirstname()+ '\n' +
+                ", timestamp: " + getTimestamp() +
+                '\n'+']';
     }
 }

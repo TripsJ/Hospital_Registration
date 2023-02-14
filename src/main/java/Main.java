@@ -11,5 +11,6 @@ public class Main {
             case "register": recs.register();
 
         }
+        recs.show();
     }
 }
