@@ -4,10 +4,10 @@ public class VisitorRecord extends Record {
 
     @Override
     public String toString() {
-        return "Patient Record{" +
-                "name: '" + getName() + '\'' +
-                ", firstname=" + "'" + getFirstname()+ '\'' +
-                ", timestamp=" + getTimestamp() +
-                '}';
+        return "Visitor Record: [" +'\n'+
+                "name: '" + getName() + '\n' +
+                ", firstname: " + "'" + getFirstname()+ '\n' +
+                ", timestamp: " + getTimestamp() + '\n'+
+                ']';
     }
 }
