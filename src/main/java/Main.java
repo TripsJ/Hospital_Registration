@@ -7,9 +7,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine().toLowerCase();
         switch (input) {
-            case "records":recs.show();
-            case "register": recs.register();
-
+            case "records" -> recs.show();
+            case "register" -> recs.register();
         }
         recs.show();
     }

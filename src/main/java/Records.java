@@ -14,18 +14,18 @@ public class Records {
 
     }
 
-    private ArrayList <Record> records = new ArrayList<>();
-    public ArrayList<Record> getRecords() {
+    private ArrayList <PersonRecord> records = new ArrayList<>();
+    public ArrayList<PersonRecord> getRecords() {
         return records;
     }
 
-    public void setRecords(ArrayList<Record> records) {
+    public void setRecords(ArrayList<PersonRecord> records) {
         this.records = records;
     }
 
 
     public void show() {
-        for (Record rec:records
+        for (PersonRecord rec:records
              ) {
             System.out.println(rec);
 
@@ -40,15 +40,10 @@ public class Records {
         System.out.println("Enter 2 for "+Staff.DR_BANKEN.name);
         System.out.println("enter 3 to visit a Patient");
         int choice = sc.nextInt();
-        switch (choice){
-            case 1:
-                makeApointement(Staff.DR_BROODCOORENS);
-                break;
-            case 2:
-                makeApointement(Staff.DR_BANKEN);
-                break;
-            default:makeVisit();
-            break;
+        switch (choice) {
+            case 1 -> makeApointement(Staff.DR_BROODCOORENS);
+            case 2 -> makeApointement(Staff.DR_BANKEN);
+            default -> makeVisit();
         }
         sc.close();
     }

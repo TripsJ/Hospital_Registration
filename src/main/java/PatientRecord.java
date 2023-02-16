@@ -1,4 +1,4 @@
-public class PatientRecord extends Record{
+public class PatientRecord extends Record implements PersonRecord{
     public PatientRecord() {
     }
 

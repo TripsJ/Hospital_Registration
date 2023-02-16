@@ -1,6 +1,6 @@
 import java.time.LocalDateTime;
 
-abstract class Record {
+abstract class Record implements PersonRecord{
     private String name;
     private String firstname;
 

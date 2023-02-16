@@ -1,4 +1,4 @@
-public class VisitorRecord extends Record {
+public class VisitorRecord extends Record implements PersonRecord {
     public VisitorRecord() {
     }
 
