@@ -1,5 +1,7 @@
-import java.time.LocalDateTime;
+import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+@Component
 abstract class Record implements PersonRecord{
     private String name;
     private String firstname;

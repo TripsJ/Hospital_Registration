@@ -1,15 +1,24 @@
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+import static java.lang.System.exit;
 
-        Records recs = new Records();
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine().toLowerCase();
-        switch (input) {
-            case "records" -> recs.show();
-            case "register" -> recs.register();
-        }
-        recs.show();
+public class Main {
+    static Records recs;
+    public static void main(String[] args) {
+       AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RecordConfiguration.class);
+
+        recs = (Records)context.getBean("storageinit");
+        recs.setContext(context);
+
+    }
+
+
+    }
+
+
+
     }
 }

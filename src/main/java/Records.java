@@ -1,9 +1,13 @@
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+@Component
 public class Records {
-    private enum Staff{
+    enum Staff{
         DR_BANKEN("Dr. N. Banken"),
         DR_BROODCOORENS("Dr. M. Broodcoorens" );
 
@@ -14,7 +18,16 @@ public class Records {
 
     }
 
+    public Records() {
+    }
+
     private ArrayList <PersonRecord> records = new ArrayList<>();
+
+    public void setContext(AnnotationConfigApplicationContext context) {
+        this.context = context;
+    }
+
+    private AnnotationConfigApplicationContext context;
     public ArrayList<PersonRecord> getRecords() {
         return records;
     }
@@ -49,24 +62,23 @@ public class Records {
     }
 
     private void makeVisit() {
-        VisitorRecord visitor = new VisitorRecord();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter your Firstname: ");
-        String first = sc.nextLine();
-        System.out.println("Please enter your Lastname: ");
-        String last =sc.nextLine();
-        visitor.setFirstname(first);
-        visitor.setName(last);
-        visitor.setTimestamp(LocalDateTime.now());
-        records.add(visitor);
-        sc.close();
-        System.out.println("Registration complete");
+            VisitorRecord visitor = (VisitorRecord) this.context.getBean("visitorinit");
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Please enter your Firstname: ");
+            String first = sc.nextLine();
+            System.out.println("Please enter your Lastname: ");
+            String last =sc.nextLine();
+            visitor.setFirstname(first);
+            visitor.setName(last);
+            visitor.setTimestamp(LocalDateTime.now());
+            records.add(visitor);
+            sc.close();
 
 
     }
 
     private void makeApointement(Staff member) {
-        PatientRecord patient = new PatientRecord();
+        PatientRecord patient = (PatientRecord) this.context.getBean("patientinit");
         Scanner sc = new Scanner(System.in);
         patient.setVisitedDoctor(member.name);
         System.out.println("You have an appointement with "+ member.name);
@@ -74,8 +86,6 @@ public class Records {
         String first = sc.nextLine();
         System.out.println("Please enter your Lastname: ");
         String last =sc.nextLine();
-        System.out.println(first);
-        System.out.println(last);
         patient.setFirstname(first);
         patient.setName(last);
         patient.setTimestamp(LocalDateTime.now());
