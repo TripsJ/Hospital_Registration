@@ -3,17 +3,24 @@ import java.util.Scanner;
 import static java.lang.System.exit;
 
 public class Controller {
-    public static void menu(Records recs){
-        Scanner sc = new Scanner(System.in);
+    public void menu(Records recs,Scanner sc) {
+
         System.out.println("records register ?");
         String input = sc.nextLine().toLowerCase();
         switch (input) {
-            case "records" ->{recs.show();
+            case "records" -> {
+                recs.show();
+                this.menu(recs,sc);
+            }
+            case "register" -> {
+                recs.register(sc);
+                this.menu(recs,sc);
+            }
+            default -> {
                 sc.close();
-                }
-            case "register" -> {recs.register();
-                sc.close();}
-            default -> {sc.close();exit(0);}
+                exit(0);
+            }
 
         }
+    }
 }

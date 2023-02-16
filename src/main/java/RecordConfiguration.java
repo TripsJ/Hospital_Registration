@@ -23,4 +23,9 @@ public class RecordConfiguration {
     VisitorRecord visitorinit(){
         return new VisitorRecord();
     }
+
+    @Bean
+    Controller controllerinit(){
+        return new Controller();
+    }
 }

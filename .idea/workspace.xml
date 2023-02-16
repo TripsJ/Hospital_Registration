@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3beefc2c-9027-4eb2-b2cb-c81c94916cfb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/RecordConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PatientRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PatientRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PersonRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PersonRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RecordConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RecordConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Records.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Records.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VisitorRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VisitorRecord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +67,7 @@
       <workItem from="1676300102949" duration="3618000" />
       <workItem from="1676363763283" duration="11683000" />
       <workItem from="1676450196556" duration="1271000" />
-      <workItem from="1676540892080" duration="10363000" />
+      <workItem from="1676540892080" duration="11747000" />
     </task>
     <servers />
   </component>

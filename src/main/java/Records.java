@@ -45,8 +45,8 @@ public class Records {
         }
     }
 
-    public void register() {
-        Scanner sc = new Scanner(System.in);
+    public void register(Scanner sc) {
+
         System.out.println("Who are you seeing?: ");
         System.out.println(" ");
         System.out.println("Enter 1 for "+Staff.DR_BROODCOORENS.name);
@@ -54,16 +54,14 @@ public class Records {
         System.out.println("enter 3 to visit a Patient");
         int choice = sc.nextInt();
         switch (choice) {
-            case 1 -> makeApointement(Staff.DR_BROODCOORENS);
-            case 2 -> makeApointement(Staff.DR_BANKEN);
-            default -> makeVisit();
+            case 1 -> makeApointement(Staff.DR_BROODCOORENS,sc);
+            case 2 -> makeApointement(Staff.DR_BANKEN,sc);
+            default -> makeVisit(sc);
         }
-        sc.close();
     }
 
-    private void makeVisit() {
+    private void makeVisit(Scanner sc) {
             VisitorRecord visitor = (VisitorRecord) this.context.getBean("visitorinit");
-            Scanner sc = new Scanner(System.in);
             System.out.println("Please enter your Firstname: ");
             String first = sc.nextLine();
             System.out.println("Please enter your Lastname: ");
@@ -72,14 +70,12 @@ public class Records {
             visitor.setName(last);
             visitor.setTimestamp(LocalDateTime.now());
             records.add(visitor);
-            sc.close();
 
 
     }
 
-    private void makeApointement(Staff member) {
+    private void makeApointement(Staff member, Scanner sc) {
         PatientRecord patient = (PatientRecord) this.context.getBean("patientinit");
-        Scanner sc = new Scanner(System.in);
         patient.setVisitedDoctor(member.name);
         System.out.println("You have an appointement with "+ member.name);
         System.out.println("Please enter your Firstname: ");
@@ -90,7 +86,6 @@ public class Records {
         patient.setName(last);
         patient.setTimestamp(LocalDateTime.now());
         records.add(patient);
-        sc.close();
         System.out.println("You are registered, please proceed");
 
 
