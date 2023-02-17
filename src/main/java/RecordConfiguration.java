@@ -9,10 +9,7 @@ import java.util.Scanner;
 public class RecordConfiguration {
 
 
-    @Bean
-    Records storageinit(){
-        return new Records();
-    }
+
 
     @Bean
     PatientRecord patientinit(){
